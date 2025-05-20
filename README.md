@@ -14,6 +14,12 @@ Dashboard juga akan dibuat untuk memudahkan dalam memahami data dan memonitor pe
 - Membuat dashboard (visualisai) untuk monitoring.
 
 ### Cakupan Proyek
+Struktur Proyek:
+- `app.py`: Aplikasi utama Streamlit
+- `dropout_model.pkl`: File model machine learning
+- `cleaned_data_new.csv`: Dataset mahasiswa
+- `requirements.txt`: Dependensi
+  
 Cakupan proyek yang akan dikerjakan:
 - menganalisa korelasi antar faktor penyebab tingginya dropout berdasarkan; age at enrollment, gender, marital status, parent's occupation dan lainnya dengan machine learning.
 - membuat dashboard terkait dengan Google Looker Studio, Metabase atau Tableau. Google Looker Studio dipilih karena waktu yang terbatas dan limited memory laptop.
