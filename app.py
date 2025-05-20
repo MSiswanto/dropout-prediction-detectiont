@@ -17,8 +17,7 @@ features = X.columns.tolist()
 st.set_page_config(page_title="Prediksi Dropout Mahasiswa", layout="wide")
 
 st.title("🎓 Prediksi Mahasiswa Dropout")
-st.markdown("Masukkan informasi berikut untuk memprediksi kemungkinan dropout:")
-st.markdown("Hasil prediksi: 0 (Dropout), 1 (Enrolled), 2 (Graduate)")
+st.markdown("Hasil prediksi: 0 (Dropout), 1 (Enrolled), 2 (Graduate). Masukkan informasi berikut untuk memprediksi kemungkinan dropout:")
 
 # Input form
 user_input = {}
