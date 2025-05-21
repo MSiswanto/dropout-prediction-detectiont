@@ -1,49 +1,87 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 # Load model dan data
-model = joblib.load("dropout_model.pkl")
-data = pd.read_csv("cleaned_data_new.csv")
+model = joblib.load("dropout_prediction_model.pkl")
+df = pd.read_csv("cleaned_data_new.csv")
 
-# Pastikan nama kolom bersih
-data.columns = data.columns.str.strip()
+# Title
+st.title("🎓 Prediksi Risiko Dropout Mahasiswa")
+st.markdown("Aplikasi ini membantu mendeteksi mahasiswa yang berisiko mengalami **dropout** berdasarkan data akademik dan demografis.")
 
-# Ambil fitur yang digunakan dalam model
-X = data.drop("Target", axis=1)
-features = X.columns.tolist()
+# Sidebar: Prediksi Siswa Berisiko Dropout
+st.sidebar.header("🔎 Prediksi Siswa Dropout")
 
-# UI Streamlit
-st.set_page_config(page_title="Prediksi Dropout Mahasiswa", layout="wide")
+# Fitur yang digunakan
+selected_features = [
+    "Age at enrollment",
+    "Previous qualification (grade)",
+    "Admission grade",
+    "Displaced",
+    "Educational special needs",
+    "Debtor",
+    "Tuition fees up to date",
+    "Gender",
+    "Scholarship holder",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 2nd sem (grade)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 2nd sem (approved)"
+]
 
-st.title("🎓 Prediksi Mahasiswa Dropout")
-st.markdown("Hasil prediksi: 0 (Dropout), 1 (Enrolled), 2 (Graduate). Masukkan informasi berikut untuk memprediksi kemungkinan dropout:")
+# Input Manual
+input_data = {}
+for feature in selected_features:
+    if df[feature].dtype == "int64" or df[feature].dtype == "float64":
+        input_data[feature] = st.sidebar.number_input(f"{feature}", value=float(df[feature].mean()))
+    else:
+        input_data[feature] = st.sidebar.selectbox(f"{feature}", sorted(df[feature].unique()))
 
-# Input form
-user_input = {}
-with st.form("prediction_form"):
-    for col in features:
-        if str(data[col].dtype) == 'category':
-            user_input[col] = st.selectbox(col, options=data[col].cat.categories.tolist())
-        elif "int" in str(data[col].dtype) or "float" in str(data[col].dtype):
-            min_val = float(data[col].min())
-            max_val = float(data[col].max())
-            default = float(data[col].mean())
-            user_input[col] = st.slider(col, min_value=min_val, max_value=max_val, value=default)
-        else:
-            user_input[col] = st.text_input(col)
-
-    submitted = st.form_submit_button("🔍 Prediksi Dropout")
+input_df = pd.DataFrame([input_data])
 
 # Prediksi
-if submitted:
-    try:
-        input_df = pd.DataFrame([user_input])
-        # Ubah kategori sesuai tipe model training
-        for col in input_df.columns:
-            if col in data.select_dtypes(include="category").columns:
-                input_df[col] = pd.Categorical(input_df[col], categories=data[col].cat.categories)
-        prediction = model.predict(input_df)[0]
-        st.success(f"📢 Prediksi Status Mahasiswa: **{prediction}**")
-    except Exception as e:
-        st.error(f"Terjadi kesalahan saat prediksi: {e}")
+if st.sidebar.button("🚀 Prediksi Dropout"):
+    prediction = model.predict(input_df)[0]
+    if prediction == 1:
+        st.sidebar.error("❌ Mahasiswa diprediksi berisiko **DROPOUT**.")
+    else:
+        st.sidebar.success("✅ Mahasiswa diprediksi **TIDAK dropout**.")
+
+# Tampilkan 10 fitur penting
+st.subheader("📊 10 Fitur Terpenting Menurut Model")
+importances = pd.Series(model.feature_importances_, index=selected_features).sort_values(ascending=False)
+top_features = importances.head(10)
+
+fig1, ax1 = plt.subplots(figsize=(8, 6))
+sns.barplot(x=top_features.values, y=top_features.index, palette='viridis', ax=ax1)
+ax1.set_title("Top 10 Fitur yang Mempengaruhi Dropout")
+ax1.set_xlabel("Importance Score")
+st.pyplot(fig1)
+
+# Visualisasi tambahan
+st.subheader("📈 Visualisasi Tambahan")
+
+col1, col2 = st.columns(2)
+
+with col1:
+    st.markdown("#### Distribusi Status Mahasiswa")
+    fig2, ax2 = plt.subplots()
+    sns.countplot(data=df, x='Target', palette='Set2', ax=ax2)
+    ax2.set_xlabel("Status")
+    ax2.set_ylabel("Jumlah")
+    st.pyplot(fig2)
+
+with col2:
+    st.markdown("#### Boxplot Admission Grade by Status")
+    fig3, ax3 = plt.subplots()
+    sns.boxplot(data=df, x='Target', y='Admission grade', palette='Pastel1', ax=ax3)
+    ax3.set_xlabel("Status")
+    ax3.set_ylabel("Admission Grade")
+    st.pyplot(fig3)
+
+# Footer
+st.markdown("---")
+st.markdown("📘 Dibuat oleh: [Nama Anda] — Proyek Prediksi Dropout Mahasiswa")
