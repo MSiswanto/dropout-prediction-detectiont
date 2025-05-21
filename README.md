@@ -63,9 +63,8 @@ Berikut merupakan link untuk mengakses dashboard tersebut:
 
 ## Menjalankan Sistem Machine Learning
 Jelaskan cara menjalankan protoype sistem machine learning yang telah dibuat. 
-- Geser tombol pada tiap fitur-fitur untuk memberi nilai inputan pada algoritma machine learning.
-- Klik tombol "Prediction" untuk melihat hasilnya, apakah mahasiswa tersebut ada kemungkinan akan dropout atau not dropout.
-- Hasil '0' menunjukkan dropout, dan '1' tidak dropout.
+- Geser tombol tiap fitur-fitur di sisi kiri untuk memberi nilai inputan pada algoritma machine learning.
+- Klik tombol "Prediksi Dropout" untuk melihat hasilnya, apakah mahasiswa tersebut ada kemungkinan akan dropout atau not dropout.
 
 Link untuk untuk mengakses prototype tersebut:
 https://dropout-prediction-detection.streamlit.app/
