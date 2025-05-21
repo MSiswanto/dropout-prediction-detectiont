@@ -62,19 +62,23 @@ Berikut merupakan link untuk mengakses dashboard tersebut:
   https://lookerstudio.google.com/reporting/d93cb43d-d199-41c9-b088-566bf728d656
 
 ## Menjalankan Sistem Machine Learning
-Jelaskan cara menjalankan protoype sistem machine learning yang telah dibuat. Selain itu, sertakan juga link untuk mengakses prototype tersebut.
+Jelaskan cara menjalankan protoype sistem machine learning yang telah dibuat. 
+- Geser tombol pada tiap fitur-fitur untuk memberi nilai inputan pada algoritma machine learning.
+- Klik tombol "Prediction" untuk melihat hasilnya, apakah mahasiswa tersebut ada kemungkinan akan dropout atau not dropout.
+- Hasil '0' menunjukkan dropout, dan '1' tidak dropout.
 
-```
-
-```
+Link untuk untuk mengakses prototype tersebut:
+https://dropout-prediction-detection.streamlit.app/
 
 ## Conclusion
 Jelaskan konklusi dari proyek yang dikerjakan.
-- Secara umum Curricular merupakan penyebab utama tingginya dropout, diikuti oleh Tuition fees up to date, Age at enrollment, Admission grade, Previous qualification dan Course.
-- Umur saat sekolah (Age at enrollment) perlu dipertimbangkan karena termasuk faktor terbesar penyumbang tingginya dropout.
-- Admission grade dan previous qualification juga berkorelasi positif dengan tingginya dropout.Perlu diperhatikan lebih siswa-siswa dengan admission-previous qualification grades yang rendah.
+-  Secara umum Curricular units of 2nd & 1st semesters merupakan penyebab utama tingginya dropout, diikuti oleh Admission grade, Age at enrollment, Previous qualification (grade), Tuition fees up to date, debtor dan Scholarship Holder.
+-  Admission grade dan previous qualification juga berkorelasi positif dengan tingginya dropout. Perlu diperhatikan lebih student dengan admission-previous qualification grades yang rendah.
+- Umur saat sekolah (Age at enrollment) perlu dipertimbangkan juga karena termasuk faktor terbesar penyumbang tingginya dropout.
+
 
 ### Rekomendasi Action Items
 Berikan beberapa rekomendasi action items yang harus dilakukan perusahaan guna menyelesaikan permasalahan atau mencapai target mereka.
-- action item 1
-- action item 2
+-   Kurangi atau batasi menerima mahasiswa baru dengan Admission grade dan previous qualification grade yang rendah, karena keduanya berkorelasi positif dengan tingginya dropout. 
+-   Perlu adanya pembatasan umur maksimal, karena Age at enrollment termasuk faktor terbesar penyumbang tingginya dropout.
+
