@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load model dan data
-model = joblib.load("dropout_prediction_model.pkl")
+model = joblib.load("dropout_model.pkl")
 df = pd.read_csv("cleaned_data_new.csv")
 
 # Title
