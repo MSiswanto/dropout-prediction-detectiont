@@ -86,7 +86,7 @@ Bussiness Dashboard dibuat menggunakan Google Looker Studio. Dari analisa dengan
 10. Course
 
 Berikut merupakan link untuk mengakses dashboard tersebut:
-  https://lookerstudio.google.com/reporting/d93cb43d-d199-41c9-b088-566bf728d656
+https://lookerstudio.google.com/reporting/d93cb43d-d199-41c9-b088-566bf728d656
 
 ## Menjalankan Sistem Machine Learning
 Jelaskan cara menjalankan protoype sistem machine learning yang telah dibuat. 
