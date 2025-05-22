@@ -14,12 +14,6 @@ Dashboard juga akan dibuat untuk memudahkan dalam memahami data dan memonitor pe
 - Membuat dashboard (visualisai) untuk monitoring.
 
 ### Cakupan Proyek
-Struktur Proyek:
-- `app.py`: Aplikasi utama Streamlit
-- `dropout_model.pkl`: File model machine learning
-- `cleaned_data_new.csv`: Dataset mahasiswa
-- `requirements.txt`: Dependensi
-  
 Cakupan proyek yang akan dikerjakan:
 - menganalisa korelasi antar faktor penyebab tingginya dropout berdasarkan; age at enrollment, gender, marital status, parent's occupation dan lainnya dengan machine learning.
 - membuat dashboard terkait dengan Google Looker Studio, Metabase atau Tableau. Google Looker Studio dipilih karena waktu yang terbatas dan limited memory laptop.
@@ -36,14 +30,49 @@ Langkah-langkah yang akan dilakukan:
   . Confusion Matrix
   . Classification Report
   . Feature Importance
-
 Sumber data: 
   https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/data.csv
 
-Setup environment:
-```
+## Setup environment:
+ 1. requirements.txt untuk Proyek Prediksi Dropout
+Buat file bernama requirements.txt di root direktori proyek kamu, lalu isi dengan:
+streamlit
+pandas
+numpy
+scikit-learn
+matplotlib
+seaborn
+joblib
 
-```
+2. Struktur Folder yang Direkomendasikan
+dropout-prediction/
+│
+├── app.py                   # Streamlit main app
+├── model.pkl                # Trained model (binary classification)
+├── label_encoder.pkl        # Label encoder (if needed)
+├── top_features.csv         # CSV optional: Top 10 features if precomputed
+├── cleaned_data_new.csv     # Dataset (optional for local visualization)
+├── requirements.txt         # Environment dependencies
+└── README.md                # Project documentation
+
+3. Setup Lokal (Opsional)
+Kalau kamu ingin menjalankan lokal sebelum deploy ke Streamlit Cloud:
+# Buat virtual environment (opsional tapi direkomendasikan)
+  python -m venv env
+  source env/bin/activate        # macOS/Linux
+  env\Scripts\activate           # Windows
+
+# Install dependencies
+  pip install -r requirements.txt
+
+# Jalankan Streamlit app
+  streamlit run app.py
+
+4. Upload ke GitHub dan Deploy
+Push seluruh folder proyek ke GitHub (pastikan app.py ada di root).
+- Masuk ke Streamlit Cloud
+- Pilih New App → From GitHub
+- Pilih repo → deploy.
 
 ## Business Dashboard
 Bussiness Dashboard dibuat menggunakan Google Looker Studio. Dari analisa dengan Random Forest, terdapat 10 faktor terbesar penyumbang tingginya jumlah siswa yang dropout:
@@ -69,7 +98,7 @@ Jelaskan cara menjalankan protoype sistem machine learning yang telah dibuat.
 Link untuk untuk mengakses prototype tersebut:
 https://dropout-prediction-detection.streamlit.app/
 
-## Conclusion
+## Conclusions
 Jelaskan konklusi dari proyek yang dikerjakan.
 -  Secara umum Curricular units of 2nd & 1st semesters merupakan penyebab utama tingginya dropout, diikuti oleh Admission grade, Age at enrollment, Previous qualification (grade), Tuition fees up to date, debtor dan Scholarship Holder.
 -  Admission grade dan previous qualification juga berkorelasi positif dengan tingginya dropout. Perlu diperhatikan lebih student dengan admission-previous qualification grades yang rendah.
@@ -81,3 +110,8 @@ Berikan beberapa rekomendasi action items yang harus dilakukan perusahaan guna m
 -   Kurangi atau batasi menerima mahasiswa baru dengan Admission grade dan previous qualification grade yang rendah, karena keduanya berkorelasi positif dengan tingginya dropout. 
 -   Perlu adanya pembatasan umur maksimal, karena Age at enrollment termasuk faktor terbesar penyumbang tingginya dropout.
 
+______________________________________
+
+📬 Contact
+GitHub: @MSiswanto
+Email: msiswanto@gmail.com
