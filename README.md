@@ -46,7 +46,7 @@ joblib
 
 2. Struktur Folder yang Direkomendasikan
 dropout-prediction/
-│
+|
 ├── app.py                   # Streamlit main app
 ├── model.pkl                # Trained model (binary classification)
 ├── label_encoder.pkl        # Label encoder (if needed)
@@ -58,13 +58,11 @@ dropout-prediction/
 3. Setup Lokal (Opsional)
 Kalau kamu ingin menjalankan lokal sebelum deploy ke Streamlit Cloud:
 # Buat virtual environment (opsional tapi direkomendasikan)
-  python -m venv env
-  source env/bin/activate        # macOS/Linux
-  env\Scripts\activate           # Windows
-
+  - python -m venv env
+  - source env/bin/activate        # macOS/Linux
+  - env\Scripts\activate           # Windows
 # Install dependencies
   pip install -r requirements.txt
-
 # Jalankan Streamlit app
   streamlit run app.py
 
