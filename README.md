@@ -55,7 +55,7 @@ dropout-prediction/
 ├── requirements.txt         # Environment dependencies
 └── README.md                # Project documentation
 
-3. Setup Lokal (Opsional)
+4. Setup Lokal (Opsional)
 Kalau kamu ingin menjalankan lokal sebelum deploy ke Streamlit Cloud:
 # Buat virtual environment (opsional tapi direkomendasikan)
   - python -m venv env
