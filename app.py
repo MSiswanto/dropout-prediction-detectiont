@@ -84,4 +84,4 @@ with col2:
 
 # Footer
 st.markdown("---")
-st.markdown("📘 Dibuat oleh: [Nama Anda] — Proyek Prediksi Dropout Mahasiswa")
+st.markdown("📘 Dibuat oleh: Meilana — Proyek Prediksi Dropout Mahasiswa")
