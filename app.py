@@ -73,6 +73,23 @@ elif menu == "Visualisasi":
     st.title("📊 Visualisasi Fitur dan Data Mahasiswa")
 
     st.subheader("🔥 Top 10 Fitur Terpenting Menurut Model")
+
+    selected_features = [
+    "Age at enrollment",
+    "Previous qualification (grade)",
+    "Admission grade",
+    "Displaced",
+    "Educational special needs",
+    "Debtor",
+    "Tuition fees up to date",
+    "Gender",
+    "Scholarship holder",
+    "Curricular units 1st sem (grade)",
+    "Curricular units 2nd sem (grade)",
+    "Curricular units 1st sem (approved)",
+    "Curricular units 2nd sem (approved)"
+]
+
     importances = pd.Series(model.feature_importances_, index=selected_features).sort_values(ascending=False)
     top_features = importances.head(10)
 
