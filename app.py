@@ -199,7 +199,7 @@ elif menu == "📊 Visualisasi":
         st.pyplot(fig5)
 
     with col2:
-        st.markdown("#### Boxplot Curricular 1st Sem")
+        st.markdown("#### Curricular 1st Sem")
         fig6, ax6 = plt.subplots()
         sns.boxplot(data=df, x='Target', y='Curricular units 1st sem (grade)', palette='Pastel1', ax=ax6)
         ax6.set_xlabel("Status")
@@ -207,7 +207,7 @@ elif menu == "📊 Visualisasi":
         st.pyplot(fig6)
 
     with col3:
-        st.markdown("#### Distribusi Berdasarkan Previous Qualification")
+        st.markdown("#### Distribusi Previous Qualification Grade")
         fig7, ax7 = plt.subplots()
         #sns.countplot(data=df, x='Target', palette='Set2', ax=ax7)
         sns.barplot(data=df, x='Target', y='Previous qualification (grade)', palette='Set2', ax=ax7)
