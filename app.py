@@ -168,7 +168,7 @@ elif menu == "📊 Visualisasi":
     st.pyplot(fig1)
 
     st.subheader("📈 Visualisasi Tambahan")
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(2)
 
     with col1:
         st.markdown("#### Distribusi Status Mahasiswa")
@@ -185,3 +185,13 @@ elif menu == "📊 Visualisasi":
         ax3.set_xlabel("Status")
         ax3.set_ylabel("Admission Grade")
         st.pyplot(fig3)
+
+   # Distribusi berdasarkan Gender
+    with col3:
+        st.markdown("#### Distribusi Berdasarkan Gender")
+        fig4, ax4 = plt.subplots()
+        #sns.countplot(data=df, x='Target', palette='Set2', ax=ax4)
+        sns.countplot(data=df_cleaned, x='Gender', hue=y, palette='Set2')
+        ax4.set_xlabel("Gender (0: Female, 1: Male)")
+        ax4.set_ylabel("Jumlah")
+        st.pyplot(fig4)
