@@ -43,7 +43,7 @@ df = pd.read_csv("cleaned_data_new.csv")
 # Halaman Beranda
 # ----------------------------
 if menu == "🏠 Beranda":
-    st.title("🎓 Selamat Datang di Aplikasi Prediksi Dropout Mahasiswa ")
+    st.title("🎓 Aplikasi Prediksi Dropout Mahasiswa ")
     st.markdown("""
     Aplikasi ini membantu mendeteksi mahasiswa yang berisiko mengalami **dropout** berdasarkan data akademik dan demografis.
 
