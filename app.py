@@ -192,7 +192,8 @@ elif menu == "📊 Visualisasi":
     with col1:
         st.markdown("#### Distribusi by Gender")
         fig5, ax5 = plt.subplots()
-        sns.barplot(data=df, x='Gender', y='Target', palette='Set2', ax=ax5)
+        #sns.barplot(data=df, x='Gender', y='Target', palette='Set2', ax=ax5)
+        sns.countplot(data=df, x='Gender', palette='Set2', ax=ax5)
         ax5.set_xlabel("Gender")
         ax5.set_ylabel("Status")
         st.pyplot(fig5)
@@ -206,7 +207,7 @@ elif menu == "📊 Visualisasi":
         st.pyplot(fig6)
 
     with col3:
-        st.markdown("#### Distribusi Berdasarkan Umur")
+        st.markdown("#### Distribusi Berdasarkan Previous Qualification")
         fig7, ax7 = plt.subplots()
         #sns.countplot(data=df, x='Target', palette='Set2', ax=ax7)
         sns.barplot(data=df, x='Target', y='Previous qualification (grade)', palette='Set2', ax=ax7)
