@@ -43,14 +43,42 @@ df = pd.read_csv("cleaned_data_new.csv")
 # Halaman Beranda
 # ----------------------------
 if menu == "🏠 Beranda":
-    st.title("🎓 Selamat Datang di Aplikasi Prediksi Dropout Mahasiswa")
+    st.title("🎓 *Selamat Datang di Aplikasi Prediksi Dropout Mahasiswa*")
     st.markdown("""
     Aplikasi ini membantu mendeteksi mahasiswa yang berisiko mengalami **dropout** berdasarkan data akademik dan demografis.
 
     Navigasikan menu di sebelah kiri untuk:
+    - Mengamati fitur penting yang berpengaruh pada dropout 
     - Melakukan prediksi risiko dropout
-    - Melihat visualisasi data dan fitur penting
+    - Melihat visualisasi data
     """)
+    #st.subheader("🔥 Top 10 Fitur Terpenting Menurut Model")
+    selected_features = [
+        "Age at enrollment",
+        "Previous qualification (grade)",
+        "Admission grade",
+        "Displaced",
+        "Educational special needs",
+        "Debtor",
+        "Tuition fees up to date",
+        "Gender",
+        "Scholarship holder",
+        "Curricular units 1st sem (grade)",
+        "Curricular units 2nd sem (grade)",
+        "Curricular units 1st sem (approved)",
+        "Curricular units 2nd sem (approved)"
+    ]
+    
+    importances = pd.Series(model.feature_importances_, index=selected_features).sort_values(ascending=False)
+    top_features = importances.head(10)
+
+    fig0, ax0 = plt.subplots(figsize=(8, 6))
+    sns.barplot(x=top_features.values, y=top_features.index, palette='viridis', ax=ax0)
+    ax0.set_title("Top 10 Fitur yang Mempengaruhi Dropout")
+    ax0.set_xlabel("Importance Score")
+    ax0.set_ylabel("Fitur")
+    st.pyplot(fig0)
+
     st.image("https://img.freepik.com/free-vector/flat-design-graduation-ceremony-illustration_23-2149269753.jpg", use_container_width=True)
 
 
