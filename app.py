@@ -191,7 +191,7 @@ elif menu == "📊 Visualisasi":
         st.markdown("#### Distribusi Berdasarkan Gender")
         fig4, ax4 = plt.subplots()
         #sns.countplot(data=df, x='Target', palette='Set2', ax=ax4)
-        sns.countplot(data=df_cleaned, x='Gender', hue=y, palette='Set2')
+        sns.countplot(data=df, x='Gender', hue=y, palette='Set2')
         ax4.set_xlabel("Gender (0: Female, 1: Male)")
         ax4.set_ylabel("Jumlah")
         st.pyplot(fig4)
