@@ -74,7 +74,7 @@ if menu == "🏠 Beranda":
     top_features = importances.head(10)
 
     fig0, ax0 = plt.subplots(figsize=(8, 6))
-    sns.countplot(x=top_features.values, y=top_features.index, palette='viridis', ax=ax0)
+    sns.barplot(x=top_features.values, y=top_features.index, palette='viridis', ax=ax0)
     ax0.set_title("Top 10 Fitur yang Mempengaruhi Dropout")
     ax0.set_xlabel("Importance Score")
     ax0.set_ylabel("Fitur")
@@ -109,7 +109,7 @@ elif menu == "🔍 Prediksi":
     #top_features = importances.head(10)
 
     #fig0, ax0 = plt.subplots(figsize=(8, 6))
-    #sns.barplot(x=top_features.values, y=top_features.index, palette='viridis', ax=ax0)
+    #sns.barplot(x=top_features.values, y=top_features.index, palette='Pastel1', ax=ax0)  #viridis
     #ax0.set_title("Top 10 Fitur yang Mempengaruhi Dropout")
     #ax0.set_xlabel("Importance Score")
     #ax0.set_ylabel("Fitur")
