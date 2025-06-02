@@ -60,6 +60,7 @@ if menu == "🏠 Beranda":
 elif menu == "🔍 Prediksi":
     st.title("🔎 Prediksi Risiko Dropout Mahasiswa")
 
+    st.subheader("🔥 Top 10 Fitur Terpenting Menurut Model")
     selected_features = [
         "Age at enrollment",
         "Previous qualification (grade)",
@@ -75,6 +76,15 @@ elif menu == "🔍 Prediksi":
         "Curricular units 1st sem (approved)",
         "Curricular units 2nd sem (approved)"
     ]
+    importances = pd.Series(model.feature_importances_, index=selected_features).sort_values(ascending=False)
+    top_features = importances.head(10)
+
+    fig1, ax1 = plt.subplots(figsize=(8, 6))
+    sns.barplot(x=top_features.values, y=top_features.index, palette='viridis', ax=ax1)
+    ax1.set_title("Top 10 Fitur yang Mempengaruhi Dropout")
+    ax1.set_xlabel("Importance Score")
+    ax2.set_ylabel("Fitur")
+    st.pyplot(fig1)
 
     st.subheader("🧾 Masukkan Fitur Mahasiswa")
     #st.sidebar.header("Masukkan Fitur Mahasiswa")
@@ -125,6 +135,7 @@ elif menu == "📊 Visualisasi":
     sns.barplot(x=top_features.values, y=top_features.index, palette='viridis', ax=ax1)
     ax1.set_title("Top 10 Fitur yang Mempengaruhi Dropout")
     ax1.set_xlabel("Importance Score")
+    ax2.set_ylabel("Fitur")
     st.pyplot(fig1)
 
     st.subheader("📈 Visualisasi Tambahan")
