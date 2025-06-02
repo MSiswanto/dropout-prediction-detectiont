@@ -43,7 +43,7 @@ df = pd.read_csv("cleaned_data_new.csv")
 # Halaman Beranda
 # ----------------------------
 if menu == "🏠 Beranda":
-    st.title("🎓 *Selamat Datang di Aplikasi Prediksi Dropout Mahasiswa*")
+    st.title("🎓 Selamat Datang di Aplikasi Prediksi Dropout Mahasiswa ")
     st.markdown("""
     Aplikasi ini membantu mendeteksi mahasiswa yang berisiko mengalami **dropout** berdasarkan data akademik dan demografis.
 
@@ -52,7 +52,8 @@ if menu == "🏠 Beranda":
     - Melakukan prediksi risiko dropout
     - Melihat visualisasi data
     """)
-    #st.subheader("🔥 Top 10 Fitur Terpenting Menurut Model")
+    
+    st.subheader("🔥 Top 10 Fitur Terpenting Berpengaruh Pada Dropout")
     selected_features = [
         "Age at enrollment",
         "Previous qualification (grade)",
@@ -79,7 +80,7 @@ if menu == "🏠 Beranda":
     ax0.set_ylabel("Fitur")
     st.pyplot(fig0)
 
-    st.image("https://img.freepik.com/free-vector/flat-design-graduation-ceremony-illustration_23-2149269753.jpg", use_container_width=True)
+    #st.image("https://img.freepik.com/free-vector/flat-design-graduation-ceremony-illustration_23-2149269753.jpg", use_container_width=True)
 
 
 # ----------------------------
