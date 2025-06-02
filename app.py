@@ -207,7 +207,7 @@ elif menu == "📊 Visualisasi":
         st.pyplot(fig6)
 
     with col3:
-        st.markdown("#### Previous Qualification Grade")
+        st.markdown("#### Previous Qualification")
         fig7, ax7 = plt.subplots()
         #sns.countplot(data=df, x='Target', palette='Set2', ax=ax7)
         sns.barplot(data=df, x='Target', y='Previous qualification (grade)', palette='Set2', ax=ax7)
