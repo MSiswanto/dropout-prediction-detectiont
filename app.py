@@ -161,7 +161,7 @@ elif menu == "📊 Visualisasi":
     st.subheader("📈 Visualisasi Tambahan")
     col4, col5, col6 = st.columns(3)
 
-    with col1:
+    with col4:
         st.markdown("#### Distribusi Status Mahasiswa")
         fig2, ax2 = plt.subplots()
         sns.countplot(data=df, x='Target', palette='Set2', ax=ax2)
@@ -169,7 +169,7 @@ elif menu == "📊 Visualisasi":
         ax2.set_ylabel("Jumlah")
         st.pyplot(fig2)
 
-    with col2:
+    with col5:
         st.markdown("#### Boxplot Admission Grade by Status")
         fig3, ax3 = plt.subplots()
         sns.boxplot(data=df, x='Target', y='Admission grade', palette='Pastel1', ax=ax3)
@@ -177,7 +177,7 @@ elif menu == "📊 Visualisasi":
         ax3.set_ylabel("Admission Grade")
         st.pyplot(fig3)
 
-     with col3:
+     with col6:
         st.markdown("#### Distribusi Berdasarkan Umur")
         fig4, ax4 = plt.subplots()
         #sns.countplot(data=df, x='Target', palette='Set2', ax=ax4)
