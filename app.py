@@ -105,15 +105,6 @@ elif menu == "🔍 Prediksi":
         "Curricular units 1st sem (approved)",
         "Curricular units 2nd sem (approved)"
     ]
-    #importances = pd.Series(model.feature_importances_, index=selected_features).sort_values(ascending=False)
-    #top_features = importances.head(10)
-
-    #fig0, ax0 = plt.subplots(figsize=(8, 6))
-    #sns.barplot(x=top_features.values, y=top_features.index, palette='Pastel1', ax=ax0)  #viridis
-    #ax0.set_title("Top 10 Fitur yang Mempengaruhi Dropout")
-    #ax0.set_xlabel("Importance Score")
-    #ax0.set_ylabel("Fitur")
-    #st.pyplot(fig0)
 
     st.subheader("🧾 Masukkan Fitur Mahasiswa")
     #st.sidebar.header("Masukkan Fitur Mahasiswa")
