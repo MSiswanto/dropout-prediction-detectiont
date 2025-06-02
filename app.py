@@ -29,7 +29,7 @@ st.sidebar.markdown("""
 st.sidebar.markdown('<div class="sidebar-title">📁 Navigasi</div>', unsafe_allow_html=True)
 with st.sidebar:
     st.markdown('<div class="sidebar-box">', unsafe_allow_html=True)
-    menu = st.radio("", ["🏠 **Beranda** ", "🔍 **Prediksi** ", "📊 **Visualisasi** "])
+    menu = st.radio("", ["🏠 **Beranda**", "🔍 **Prediksi**", "📊 **Visualisasi**"])
     st.markdown('</div>', unsafe_allow_html=True)
 
 # Load model dan data
