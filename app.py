@@ -186,3 +186,32 @@ elif menu == "📊 Visualisasi":
         ax4.set_xlabel("Target")
         ax4.set_ylabel("Age")
         st.pyplot(fig4)
+
+st.subheader("📈 Visualisasi Tambahan")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.markdown("#### Distribusi Status Mahasiswa")
+        fig2, ax2 = plt.subplots()
+        sns.countplot(data=df, x='Target', palette='Set2', ax=ax2)
+        ax2.set_xlabel("Status")
+        ax2.set_ylabel("Jumlah")
+        st.pyplot(fig2)
+
+    with col2:
+        st.markdown("#### Boxplot Admission Grade by Status")
+        fig3, ax3 = plt.subplots()
+        sns.boxplot(data=df, x='Target', y='Admission grade', palette='Pastel1', ax=ax3)
+        ax3.set_xlabel("Status")
+        ax3.set_ylabel("Admission Grade")
+        st.pyplot(fig3)
+
+   # Distribusi berdasarkan Gender
+    with col3:
+        st.markdown("#### Distribusi Berdasarkan Umur")
+        fig4, ax4 = plt.subplots()
+        #sns.countplot(data=df, x='Target', palette='Set2', ax=ax4)
+        sns.barplot(data=df, x='Target', y='Age at enrollment', palette='Set2', ax=ax4)
+        ax4.set_xlabel("Target")
+        ax4.set_ylabel("Age")
+        st.pyplot(fig4)
