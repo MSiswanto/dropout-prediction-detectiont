@@ -177,14 +177,14 @@ elif menu == "📊 Visualisasi":
         ax3.set_ylabel("Admission Grade")
         st.pyplot(fig3)
 
-     with col6:
+    with col6:
         st.markdown("#### Distribusi Berdasarkan Umur")
         fig4, ax4 = plt.subplots()
-        #sns.countplot(data=df, x='Target', palette='Set2', ax=ax4)
         sns.barplot(data=df, x='Target', y='Age at enrollment', palette='Set2', ax=ax4)
         ax4.set_xlabel("Target")
         ax4.set_ylabel("Age")
         st.pyplot(fig4)
+
 
     st.subheader("📈 Visualisasi Tambahan-1")
     col1, col2, col3 = st.columns(3)
