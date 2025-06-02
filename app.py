@@ -177,8 +177,7 @@ elif menu == "📊 Visualisasi":
         ax3.set_ylabel("Admission Grade")
         st.pyplot(fig3)
 
-   # Distribusi berdasarkan Gender
-    with col3:
+     with col3:
         st.markdown("#### Distribusi Berdasarkan Umur")
         fig4, ax4 = plt.subplots()
         #sns.countplot(data=df, x='Target', palette='Set2', ax=ax4)
@@ -187,31 +186,30 @@ elif menu == "📊 Visualisasi":
         ax4.set_ylabel("Age")
         st.pyplot(fig4)
 
-st.subheader("📈 Visualisasi Tambahan")
+    st.subheader("📈 Visualisasi Tambahan-1")
     col1, col2, col3 = st.columns(3)
 
     with col1:
-        st.markdown("#### Distribusi Status Mahasiswa")
-        fig2, ax2 = plt.subplots()
-        sns.countplot(data=df, x='Target', palette='Set2', ax=ax2)
-        ax2.set_xlabel("Status")
-        ax2.set_ylabel("Jumlah")
-        st.pyplot(fig2)
+        st.markdown("#### Distribusi by Gender")
+        fig5, ax5 = plt.subplots()
+        sns.barplot(data=df, x='Gender', y='Target', palette='Set2', ax=ax5)
+        ax5.set_xlabel("Gender")
+        ax5.set_ylabel("Status")
+        st.pyplot(fig5)
 
     with col2:
-        st.markdown("#### Boxplot Admission Grade by Status")
-        fig3, ax3 = plt.subplots()
-        sns.boxplot(data=df, x='Target', y='Admission grade', palette='Pastel1', ax=ax3)
-        ax3.set_xlabel("Status")
-        ax3.set_ylabel("Admission Grade")
-        st.pyplot(fig3)
+        st.markdown("#### Boxplot Curricular 1st Sem")
+        fig6, ax6 = plt.subplots()
+        sns.boxplot(data=df, x='Target', y='Curricular units 1st sem (grade)', palette='Pastel1', ax=ax6)
+        ax6.set_xlabel("Status")
+        ax6.set_ylabel("Curricular 1st Sem")
+        st.pyplot(fig6)
 
-   # Distribusi berdasarkan Gender
     with col3:
         st.markdown("#### Distribusi Berdasarkan Umur")
-        fig4, ax4 = plt.subplots()
-        #sns.countplot(data=df, x='Target', palette='Set2', ax=ax4)
-        sns.barplot(data=df, x='Target', y='Age at enrollment', palette='Set2', ax=ax4)
-        ax4.set_xlabel("Target")
-        ax4.set_ylabel("Age")
-        st.pyplot(fig4)
+        fig7, ax7 = plt.subplots()
+        #sns.countplot(data=df, x='Target', palette='Set2', ax=ax7)
+        sns.barplot(data=df, x='Target', y='Previous qualification (grade)', palette='Set2', ax=ax7)
+        ax7.set_xlabel("Target")
+        ax7.set_ylabel("Previous Qualification Grade")
+        st.pyplot(fig7)
