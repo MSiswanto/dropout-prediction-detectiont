@@ -237,10 +237,10 @@ elif menu == "🔍 Prediksi":
         ax.set_ylabel("Nilai Fitur")
         ax.set_title("Nilai Input Mahasiswa vs Threshold Dropout")
         ax.legend()
-        st.pyplot(fig) """
+        st.pyplot(fig) 
 
 
-   """ st.subheader("🧾 Masukkan Fitur Mahasiswa")
+   st.subheader("🧾 Masukkan Fitur Mahasiswa")
     
     input_data = {}
     for feature in selected_features:
