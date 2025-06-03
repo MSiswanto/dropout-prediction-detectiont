@@ -130,7 +130,11 @@ elif menu == "🔍 Prediksi":
 
     # Tombol prediksi
     if st.button("🚀 Prediksi Dropout"):
-        prediction = model.predict(input_df)[0]
+        #prediction = model.predict(input_df)[0]
+        proba = model.predict_proba(input_df)[0][1]  # Probabilitas kelas "Dropout"
+        prediction = int(proba > 0.5)
+        st.write(f"📊 Probabilitas Dropout: **{proba:.2f}**")
+
 
         if prediction == 1:
             st.error("❌ Mahasiswa diprediksi berisiko **DROPOUT**.")
