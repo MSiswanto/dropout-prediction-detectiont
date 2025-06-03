@@ -124,8 +124,10 @@ elif menu == "🔍 Prediksi":
         "Age at enrollment": 20,
         "Previous qualification (grade)": 12,
         "Admission grade": 140,
-        "Curricular units 1st sem (grade)": 10,
-        "Curricular units 2nd sem (grade)": 10,
+        "Curricular units 1st sem (grade)": 6,
+        "Curricular units 2nd sem (grade)": 6,
+        "Curricular units 1st sem (approved)": 6,
+        "Curricular units 2nd sem (approved)": 6,
     }
 
     # Tombol prediksi
