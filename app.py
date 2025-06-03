@@ -140,8 +140,8 @@ elif menu == "🔍 Prediksi":
         # Visualisasi Input vs Threshold
         st.subheader("📉 Perbandingan Nilai Input vs Batas Dropout")
 
-        import matplotlib.pyplot as plt
-        import seaborn as sns
+        #import matplotlib.pyplot as plt
+        #import seaborn as sns
 
         input_vals = {k: v for k, v in input_data.items() if k in thresholds}
         features = list(input_vals.keys())
@@ -262,6 +262,7 @@ elif menu == "🔍 Prediksi":
 # Halaman Visualisasi
 # ----------------------------
 elif menu == "📊 Visualisasi":
+
     st.title("📊 Visualisasi Fitur dan Data Mahasiswa")
 
     st.subheader("🔥 Top 10 Fitur Terpenting Menurut Model")
