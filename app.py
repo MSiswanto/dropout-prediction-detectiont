@@ -158,6 +158,7 @@ elif menu == "🔍 Prediksi":
 
         ax.set_ylabel("Nilai Fitur")
         ax.set_title("Nilai Input Mahasiswa vs Threshold Dropout")
+        ax.set_xticklabels(ax.get_xticklabels(), rotation=30, ha='right') 
         ax.legend()
         st.pyplot(fig)
 
