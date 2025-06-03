@@ -113,9 +113,9 @@ elif menu == "🔍 Prediksi":
     for i, feature in enumerate(selected_features):
         with cols[i % 2]:
             if df[feature].dtype in ["int64", "float64"]:
-                input_data[feature] = st.number_input(f"{feature}", value=float(df[feature].mean()), key=feature)
+                input_data[feature] = st.number_input(f"**{feature}**", value=float(df[feature].mean()), key=feature)
             else:
-                input_data[feature] = st.selectbox(f"{feature}", sorted(df[feature].unique()), key=feature)
+                input_data[feature] = st.selectbox(f"**{feature}**", sorted(df[feature].unique()), key=feature)
 
     input_df = pd.DataFrame([input_data])
 
